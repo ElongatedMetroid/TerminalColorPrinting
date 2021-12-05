@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 #define CLEAR "\e[1;1H\e[2J"
 #define GRE "\x1b[42m"
@@ -9,6 +10,7 @@
 #define RESET "\x1b[0m"
 
 int colorLength = 10;
+int pauseLength = 150;  //ms
 int n = 0;
 int i = 0;     //This i can be changed for some crazy effects   
 
@@ -32,6 +34,7 @@ int main()
         printf(MAG " "RESET);
         }
 
+        usleep(pauseLength);
     }
 
     return 0;
